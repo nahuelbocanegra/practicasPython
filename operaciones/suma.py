@@ -3,4 +3,4 @@ from operaciones import Opercaciones
 class Sumar(Opercaciones):  
     
     def resultado(self):
-        return self.num1 + self.num2
+        return self.get_num1() + self.get_num2()

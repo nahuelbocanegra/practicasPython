@@ -4,4 +4,4 @@ class Dividir(Opercaciones):
     
     def resultado(self):
         
-        return self.num1 / self.num2
+        return self.get_num2() / self.get_num1()
