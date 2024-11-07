@@ -26,3 +26,9 @@ def contarConRecurion(n):
 
 contarConRecurion(1)
         
+
+def contadorComprehension():
+
+    array=[print(i) for i in range(1,101)]
+
+contadorComprehension()
