@@ -13,6 +13,7 @@
  *   podido resolver las operaciones.
 """
 import os
+import re
 archivo="c:/Users/gusta/Desktop/Nahuel/Programacion 1/Python/logica/archivo.txt"
 
 def leerArchivo(archivo):
@@ -24,37 +25,60 @@ def leerArchivo(archivo):
     
     return contenido
 
-def resultado(archivo):
+def lista():
 
     contenido=leerArchivo(archivo)
 
-    resultadoString=[]
-
-    for i in contenido:
-        if i == "\n":
-            continue
-        resultadoString.append(i)
-
-    resultadoEntero=0
-
-    for i in resultadoString:
-       if i.isdigit():
-           resultadoEntero=i
-
+    #EXPRESIONES REGULARES 
+    resultado_lista=re.findall(r'\d+|[+\-*/()]', contenido) 
+    #captura numeros y operadores matematicos
     
 
-    print(resultadoString)
+    return resultado_lista
+    
+ 
+
+def total(res):
+
+    for i in res:
+        if i == "*":
+            mul=int(res[res.index(i)-1])*int(res[res.index(i)+1])
+            del res[res.index(i)-1]
+            del res[res.index(i)+1]
+            res[res.index(i)] = mul
+            
+         
+        elif i == "/":
+            div=int(res[res.index(i)-1])//int(res[res.index(i)+1])
+            del res[res.index(i)-1]
+            del res[res.index(i)+1]
+            res[res.index(i)] = div
+          
+   
+    for i in res:
+        for j in res:
+            if j == "+":
+                sum=int(res[res.index(j)-1])+int(res[res.index(j)+1])
+                del res[res.index(j)-1]
+                del res[res.index(j)+1]
+                res[res.index(j)] = sum  
+            elif j  == "-":
+                resta=int(res[res.index(j)-1]) - int(res[res.index(j)+1])
+                del res[res.index(j)-1]
+                del res[res.index(j)+1]
+                res[res.index(j)] = resta
+           
+        
+        
+     
+        
+    return res[0]
 
 
-resultado(archivo)
-""""
-for i in contenido:
-    if i == "\n":
-        continue
-    if i == "+":
-        resultado+=i
-    resultado=i
-print(resultado)
-"""
+resultado_lista=lista()
+
+print(total(resultado_lista))
+
+
 
 
