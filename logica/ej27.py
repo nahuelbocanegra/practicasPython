@@ -4,3 +4,12 @@
  * - EXTRA: ¿Eres capaz de dibujar más figuras?
 """
  
+def dibujarCuadrado(lado):
+    dibujo=""
+    for i in range(lado):
+        for j in range(lado):
+            dibujo+="* "
+        dibujo+="\n"
+
+    print(dibujo)
+dibujarCuadrado(4)
