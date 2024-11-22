@@ -4,3 +4,4 @@
  * - Cada vector se podría representar como un array. Ejemplo: [1, -2]
 """
  
+ 

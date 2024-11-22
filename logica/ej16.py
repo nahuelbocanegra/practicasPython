@@ -10,17 +10,23 @@
  
 def calcularDias(str1,str2):
     
-    dias=0
     fecha1=str1.split("/")
     fecha2=str2.split("/")
 
 
+    
 
 
-    print(fecha1)
+
+   
+
+
+
+
+   
     print(fecha2)
     
     
-calcularDias("11/07/10","11/07/11")
+calcularDias("11/08/10","11/07/11")
 
     
