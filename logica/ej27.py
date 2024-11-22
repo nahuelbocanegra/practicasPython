@@ -13,3 +13,14 @@ def dibujarCuadrado(lado):
 
     print(dibujo)
 dibujarCuadrado(4)
+
+def dibujarRectangulo(base,altura):
+    dibujo=""
+    for i in range(base):
+        for j in range(altura):
+            dibujo+="* "
+        dibujo+="\n"
+
+    print(dibujo)
+dibujarRectangulo(4,5)
+
